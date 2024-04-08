@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 
 # Create your models here.
@@ -16,3 +17,15 @@ class GeneralInfo(models.Model):
 
     def __str__(self):
         return self.agency_name
+
+
+class Blog(models.Model):
+    image = models.CharField(max_length=255, null=True, blank=True)
+    category = models.CharField(max_length=50, null=True, blank=True)
+    title = models.CharField(max_length=255)
+    author = models.CharField(max_length=255)
+    created_at = models.DateTimeField(default=timezone.now)
+    content = models.TextField()
+
+    def __str__(self):
+        return self.title
