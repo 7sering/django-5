@@ -1,10 +1,8 @@
 from django.contrib import admin
-from .models import GeneralInfo, Blog
+from .models import GeneralInfo, Blog, Author
 
 
 # Register your models here.
-
-
 @admin.register(GeneralInfo)
 class GeneralInfoAdmin(admin.ModelAdmin):
     list_display = [
@@ -12,6 +10,15 @@ class GeneralInfoAdmin(admin.ModelAdmin):
         "location",
         "email",
         "phone",
+    ]
+
+
+@admin.register(Author)
+class AuthorAdmin(admin.ModelAdmin):
+    list_display = [
+        "first_name",
+        "country",
+        "joined_at",
     ]
 
 

@@ -22,3 +22,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("agency.urls")),
 ]
+
+admin.site.site_header = "Welcome in Xcode"
+admin.site.index_title = "Administration Panel"
+admin.site.site_title = "Xcode"
