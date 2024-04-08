@@ -25,11 +25,11 @@
       </a>
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="#hero">Home</a></li>
+          <li><a href="{% url 'home' %}">Home</a></li>
           <li><a href="#services">Services</a></li>
           <li><a href="#testimonials">Testimonials</a></li>
           <li><a href="#faq">FAQ</a></li>
-          <li><a href="blog.html">Blog</a></li>
+          <li><a href="{% url 'blog' %}">Blog</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav><!-- .navbar -->
@@ -41,27 +41,3 @@
   </header><!-- End Header -->
   <!-- End Header -->
 
-
-    <!-- ======= Hero Section ======= -->
-    <section id="hero" class="hero">
-      <div class="container position-relative">
-        <div class="row gy-5" data-aos="fade-in">
-          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
-            <h2>Welcome to <span>{{agency_name}}</span></h2>
-            <p>Empowering Success, Inspiring Growth: Your Vision, Our Expertise.</p>
-            <div class="d-flex justify-content-center justify-content-lg-start">
-              <a href="#services" class="btn-get-started">Get Started</a>
-              <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
-            </div>
-          </div>
-          <div class="col-lg-6 order-1 order-lg-2">
-            <img src="{% static 'assets/img/hero-img.svg' %}" class="img-fluid" alt="" data-aos="zoom-out" data-aos-delay="100">
-          </div>
-        </div>
-      </div>
-  
-  
-      </div>
-    </section>
-    <!-- End Hero Section -->
-  
