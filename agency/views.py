@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from agency.models import GeneralInfo, Blog
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+
 
 # Create your views here.
 
@@ -20,7 +22,16 @@ def home(request):
 
 
 def blog(request):
-    blogs = Blog.objects.all()
+    all_blogs = Blog.objects.all().order_by("-created_at")
+    blog_per_page = 3
+    paginator = Paginator(all_blogs, blog_per_page)
+    page = request.GET.get("page")
+    try:
+        blogs = paginator.page(page)
+    except PageNotAnInteger:
+        blogs = paginator.page(1)
+    except EmptyPage:
+        blogs = paginator.page(paginator.num_pages)
     context = {
         "blogs": blogs,
     }
